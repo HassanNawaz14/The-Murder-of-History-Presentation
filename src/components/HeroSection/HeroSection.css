@@ -1,0 +1,438 @@
+/* =========================================
+   HERO SECTION — "The Murder of History"
+   Warm academic design inspired by archival aesthetics
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+/* ---------- Section ---------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  background: #f5f0e8;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero-section.hero-visible {
+  opacity: 1;
+}
+
+/* Background paper texture */
+.hero-bg-texture {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(200, 180, 150, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(180, 160, 130, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(245, 240, 232, 0.5) 0%, transparent 80%);
+  pointer-events: none;
+}
+
+/* ---------- Header ---------- */
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: heroFadeInDown 0.7s ease 0.3s forwards;
+}
+
+.hero-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-recording-dot {
+  width: 10px;
+  height: 10px;
+  background: #c0392b;
+  border-radius: 50%;
+  display: inline-block;
+  animation: heroPulse 2s ease-in-out infinite;
+}
+
+.hero-brand {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #2c2118;
+  letter-spacing: 0.02em;
+}
+
+.hero-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6b5a48;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Main Content ---------- */
+.hero-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem 0 4rem;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-content-left {
+  flex: 1;
+  max-width: 540px;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: heroFadeInLeft 0.8s ease 0.5s forwards;
+}
+
+.hero-content-right {
+  flex: 0 0 auto;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: heroFadeInRight 0.8s ease 0.7s forwards;
+}
+
+/* ---------- Badge ---------- */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(192, 57, 43, 0.08);
+  border: 1px solid rgba(192, 57, 43, 0.15);
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge-icon {
+  font-size: 0.85rem;
+}
+
+.hero-badge-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #8b3a2f;
+  text-transform: uppercase;
+}
+
+/* ---------- Title ---------- */
+.hero-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 4.2rem;
+  font-weight: 800;
+  color: #1a1410;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-title-emphasis {
+  font-style: italic;
+  color: #a61c1c;
+  position: relative;
+}
+
+.hero-title-emphasis::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(166, 28, 28, 0.2);
+  border-radius: 2px;
+}
+
+/* ---------- Description ---------- */
+.hero-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #5a4e42;
+  max-width: 460px;
+  margin-bottom: 2rem;
+  border-left: 2px solid rgba(166, 28, 28, 0.2);
+  padding-left: 1rem;
+}
+
+/* ---------- Author ---------- */
+.hero-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-author-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c0392b 0%, #8e2a1e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 12px rgba(192, 57, 43, 0.25);
+}
+
+.hero-author-avatar-icon {
+  font-size: 1.1rem;
+  filter: grayscale(0.2);
+}
+
+.hero-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-author-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2c2118;
+  letter-spacing: 0.03em;
+}
+
+.hero-author-name {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.85rem;
+  color: #7a6b5d;
+}
+
+/* ---------- Hero Card ---------- */
+.hero-card {
+  width: 320px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow:
+    0 4px 24px rgba(44, 33, 24, 0.08),
+    0 1px 4px rgba(44, 33, 24, 0.04);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 40px rgba(44, 33, 24, 0.12),
+    0 2px 8px rgba(44, 33, 24, 0.06);
+}
+
+.hero-card-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(145deg, #faf8f4, #f0ebe2);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.hero-card-image {
+  width: 65%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+  transition: transform 0.5s ease;
+}
+
+.hero-card:hover .hero-card-image {
+  transform: scale(1.05);
+}
+
+.hero-card-quote {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #7a6b5d;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+/* ---------- Bottom Dock ---------- */
+.hero-dock {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0;
+  animation: heroFadeInUp 0.7s ease 0.9s forwards;
+}
+
+.hero-dock-container {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(44, 33, 24, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0.4rem;
+  border-radius: 14px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.hero-dock-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  border: none;
+  padding: 0.55rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.hero-dock-item:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-dock-item-active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+/* ---------- Scroll Indicator ---------- */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  opacity: 0;
+  animation: heroFadeInUp 0.7s ease 1.2s forwards;
+}
+
+.hero-scroll-arrow {
+  color: #9a8b7a;
+  animation: heroBounce 2s ease-in-out infinite;
+}
+
+.hero-scroll-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Animations ---------- */
+@keyframes heroFadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroFadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroFadeInUp {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes heroPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes heroBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .hero-content-left {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-description {
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-author {
+    justify-content: center;
+  }
+
+  .hero-content-right {
+    display: none;
+  }
+
+  .hero-header {
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-dock-item {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.8rem;
+  }
+}

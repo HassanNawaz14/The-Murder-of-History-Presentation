@@ -1,0 +1,267 @@
+/* =========================================
+   DAMAGE SLIDES — Rich Layout Components
+   Adapted from The_Damage.html design system
+   Uses the sepia theme palette
+   ========================================= */
+
+
+/* ---------- Arrow Flow ---------- */
+.dm-arrow-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.dm-flow-box {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  background: rgba(232, 221, 208, 0.1);
+  color: #e8ddd0;
+  border: 1px solid rgba(232, 221, 208, 0.12);
+  white-space: nowrap;
+}
+
+.dm-flow-arrow {
+  color: rgba(232, 221, 208, 0.35);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+
+/* ---------- Stat Row ---------- */
+.dm-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.dm-stat {
+  text-align: center;
+  padding: 1rem 0.75rem;
+  background: rgba(232, 221, 208, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(232, 221, 208, 0.08);
+}
+
+.dm-stat-num {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e8ddd0;
+  line-height: 1.2;
+}
+
+.dm-stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  color: rgba(232, 221, 208, 0.5);
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+
+/* ---------- Big Quote ---------- */
+.dm-big-quote {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #e8ddd0;
+  line-height: 1.55;
+  border-left: 2px solid rgba(192, 168, 130, 0.4);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- 2-Column Grid ---------- */
+.dm-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Highlight Box ---------- */
+.dm-highlight-box {
+  border: 1px solid rgba(232, 221, 208, 0.12);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.dm-highlight-wide {
+  margin-bottom: 1rem;
+}
+
+.dm-hl-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(232, 221, 208, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.dm-hl-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #e8ddd0;
+  line-height: 1.65;
+}
+
+
+/* ---------- Info Card ---------- */
+.dm-info-card {
+  background: rgba(232, 221, 208, 0.06);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(232, 221, 208, 0.06);
+}
+
+.dm-info-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(232, 221, 208, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.dm-info-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e8ddd0;
+  line-height: 1.45;
+}
+
+.dm-info-small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(232, 221, 208, 0.55);
+  margin-top: 0.35rem;
+  line-height: 1.55;
+}
+
+
+/* ---------- Tags ---------- */
+.dm-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.dm-tag-danger {
+  background: rgba(163, 45, 45, 0.2);
+  color: #e8a0a0;
+  border: 1px solid rgba(163, 45, 45, 0.25);
+}
+
+.dm-tag-amber {
+  background: rgba(133, 79, 11, 0.2);
+  color: #e8c88a;
+  border: 1px solid rgba(133, 79, 11, 0.25);
+}
+
+.dm-tag-purple {
+  background: rgba(60, 52, 137, 0.2);
+  color: #b8b0e8;
+  border: 1px solid rgba(60, 52, 137, 0.25);
+}
+
+.dm-tag-teal {
+  background: rgba(15, 110, 86, 0.2);
+  color: #80d4b8;
+  border: 1px solid rgba(15, 110, 86, 0.25);
+}
+
+.dm-tag-blue {
+  background: rgba(24, 95, 165, 0.2);
+  color: #88bce8;
+  border: 1px solid rgba(24, 95, 165, 0.25);
+}
+
+
+/* ---------- Slide Header (title + subtitle + divider) ---------- */
+.dm-slide-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.dm-slide-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e8ddd0;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.dm-slide-subtitle {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(232, 221, 208, 0.55);
+  margin-bottom: 1rem;
+}
+
+.dm-divider {
+  height: 1px;
+  background: rgba(232, 221, 208, 0.1);
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .dm-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .dm-stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dm-arrow-flow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dm-flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .dm-slide-title {
+    font-size: 1.4rem;
+  }
+}

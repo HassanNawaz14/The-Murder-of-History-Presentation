@@ -1,0 +1,271 @@
+/* =========================================
+   TRUTH SLIDES — Rich Layout Components
+   Theme: Sage (earthy olive/green tones)
+   Base text color: #3a3527
+   ========================================= */
+
+
+/* ---------- Big Quote ---------- */
+.tr-big-quote {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #3a3527;
+  line-height: 1.55;
+  border-left: 2px solid rgba(74, 99, 64, 0.4);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Question Grid ---------- */
+.tr-q-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tr-q-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #3a3527;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(58, 53, 39, 0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.tr-q-mark {
+  font-size: 0.85rem;
+  color: #a32d2d;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+
+/* ---------- Myth / Truth Contrast Row ---------- */
+.tr-myth-truth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 0.65rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tr-myth-box {
+  background: rgba(163, 45, 45, 0.08);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(163, 45, 45, 0.1);
+}
+
+.tr-myth-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: #a32d2d;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.tr-myth-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #791f1f;
+  line-height: 1.55;
+}
+
+.tr-truth-box {
+  background: rgba(15, 110, 86, 0.08);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(15, 110, 86, 0.1);
+}
+
+.tr-truth-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: #0f6e56;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.tr-truth-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #085041;
+  line-height: 1.55;
+}
+
+
+/* ---------- 2-Column Grid ---------- */
+.tr-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Highlight Box ---------- */
+.tr-highlight-box {
+  border: 1px solid rgba(58, 53, 39, 0.12);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 0.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tr-hl-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(58, 53, 39, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.tr-hl-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #3a3527;
+  line-height: 1.65;
+}
+
+
+/* ---------- Info Card ---------- */
+.tr-info-card {
+  background: rgba(58, 53, 39, 0.06);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(58, 53, 39, 0.06);
+}
+
+.tr-info-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(58, 53, 39, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.tr-info-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #3a3527;
+  line-height: 1.45;
+}
+
+.tr-info-small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(58, 53, 39, 0.55);
+  margin-top: 0.35rem;
+  line-height: 1.55;
+}
+
+
+/* ---------- Tags ---------- */
+.tr-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tr-tag-danger {
+  background: rgba(163, 45, 45, 0.1);
+  color: #a32d2d;
+  border: 1px solid rgba(163, 45, 45, 0.15);
+}
+
+.tr-tag-amber {
+  background: rgba(133, 79, 11, 0.1);
+  color: #854f0b;
+  border: 1px solid rgba(133, 79, 11, 0.15);
+}
+
+.tr-tag-coral {
+  background: rgba(153, 60, 29, 0.1);
+  color: #993c1d;
+  border: 1px solid rgba(153, 60, 29, 0.15);
+}
+
+.tr-tag-purple {
+  background: rgba(60, 52, 137, 0.1);
+  color: #3c3489;
+  border: 1px solid rgba(60, 52, 137, 0.15);
+}
+
+
+/* ---------- Slide Header ---------- */
+.tr-slide-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tr-slide-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3a3527;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.tr-slide-subtitle {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(58, 53, 39, 0.6);
+  margin-bottom: 1rem;
+}
+
+.tr-divider {
+  height: 1px;
+  background: rgba(58, 53, 39, 0.1);
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .tr-grid-2,
+  .tr-myth-truth-row,
+  .tr-q-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tr-slide-title {
+    font-size: 1.4rem;
+  }
+}

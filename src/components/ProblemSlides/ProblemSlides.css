@@ -1,0 +1,272 @@
+/* =========================================
+   PROBLEM SLIDES — Rich Layout Components
+   Theme: Ink (cool dark slate / charcoal)
+   Base text: #dcd8d0
+   ========================================= */
+
+
+/* ---------- Big Quote ---------- */
+.pr-big-quote {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #dcd8d0;
+  line-height: 1.55;
+  border-left: 2px solid rgba(224, 90, 74, 0.4);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Arrow Flow ---------- */
+.pr-arrow-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.pr-flow-box {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  background: rgba(220, 216, 208, 0.08);
+  color: #dcd8d0;
+  border: 1px solid rgba(220, 216, 208, 0.1);
+  white-space: nowrap;
+}
+
+.pr-flow-arrow {
+  color: rgba(220, 216, 208, 0.3);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+
+/* ---------- Grids ---------- */
+.pr-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pr-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Item List ---------- */
+.pr-item-list {
+  border: 1px solid rgba(220, 216, 208, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pr-item-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid rgba(220, 216, 208, 0.06);
+}
+
+.pr-item-row:last-child {
+  border-bottom: none;
+}
+
+.pr-item-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(220, 216, 208, 0.3);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.pr-item-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #dcd8d0;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.pr-item-muted {
+  color: rgba(220, 216, 208, 0.45);
+}
+
+
+/* ---------- Highlight Box ---------- */
+.pr-highlight-box {
+  border: 1px solid rgba(220, 216, 208, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pr-hl-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(220, 216, 208, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.pr-hl-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #dcd8d0;
+  line-height: 1.65;
+}
+
+
+/* ---------- Info Card ---------- */
+.pr-info-card {
+  background: rgba(220, 216, 208, 0.06);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(220, 216, 208, 0.06);
+}
+
+.pr-info-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(220, 216, 208, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.pr-info-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #dcd8d0;
+  line-height: 1.45;
+}
+
+.pr-info-small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(220, 216, 208, 0.5);
+  margin-top: 0.35rem;
+  line-height: 1.55;
+}
+
+
+/* ---------- Tags ---------- */
+.pr-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pr-tag-danger {
+  background: rgba(224, 90, 74, 0.15);
+  color: #f0a8a0;
+  border: 1px solid rgba(224, 90, 74, 0.2);
+}
+
+.pr-tag-coral {
+  background: rgba(153, 60, 29, 0.2);
+  color: #e8a888;
+  border: 1px solid rgba(153, 60, 29, 0.25);
+}
+
+.pr-tag-amber {
+  background: rgba(133, 79, 11, 0.2);
+  color: #e8c88a;
+  border: 1px solid rgba(133, 79, 11, 0.25);
+}
+
+.pr-tag-purple {
+  background: rgba(60, 52, 137, 0.2);
+  color: #b8b0e8;
+  border: 1px solid rgba(60, 52, 137, 0.25);
+}
+
+
+/* ---------- Slide Header ---------- */
+.pr-slide-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pr-slide-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #dcd8d0;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.pr-slide-subtitle {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(220, 216, 208, 0.55);
+  margin-bottom: 1rem;
+}
+
+.pr-divider {
+  height: 1px;
+  background: rgba(220, 216, 208, 0.1);
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .pr-grid-2,
+  .pr-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-arrow-flow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pr-flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .pr-slide-title {
+    font-size: 1.4rem;
+  }
+}

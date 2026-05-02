@@ -1,0 +1,287 @@
+/* =========================================
+   CONCLUSION SLIDES — Rich Layout Components
+   Theme: Olive (warm light olive / golden green)
+   Background: light (#f0ece0 → #d0c8ac)
+   Base text: #33301e (dark)
+   ========================================= */
+
+
+/* ---------- Big Quote ---------- */
+.co-big-quote {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #33301e;
+  line-height: 1.55;
+  border-left: 2px solid rgba(107, 96, 32, 0.45);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Arrow Flow ---------- */
+.co-arrow-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.co-flow-box {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  background: rgba(51, 48, 30, 0.06);
+  color: #33301e;
+  border: 1px solid rgba(51, 48, 30, 0.1);
+  white-space: nowrap;
+}
+
+.co-flow-arrow {
+  color: rgba(51, 48, 30, 0.3);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+
+/* ---------- 2-Column Grid ---------- */
+.co-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Highlight Box ---------- */
+.co-highlight-box {
+  border: 1px solid rgba(51, 48, 30, 0.12);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Numbered Fix Items ---------- */
+.co-fix-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(51, 48, 30, 0.08);
+}
+
+.co-fix-item:last-child {
+  border-bottom: none;
+}
+
+.co-fix-num {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(51, 48, 30, 0.35);
+  min-width: 22px;
+  padding-top: 2px;
+}
+
+.co-fix-body {
+  flex: 1;
+}
+
+.co-fix-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #33301e;
+  margin-bottom: 3px;
+  line-height: 1.4;
+}
+
+.co-fix-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(51, 48, 30, 0.55);
+  line-height: 1.55;
+}
+
+
+/* ---------- Conclusion Bullet Items ---------- */
+.co-concl-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(51, 48, 30, 0.08);
+}
+
+.co-concl-item:last-child {
+  border-bottom: none;
+}
+
+.co-concl-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(51, 48, 30, 0.3);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.co-concl-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #33301e;
+  line-height: 1.55;
+}
+
+
+/* ---------- Final Quote (centered box) ---------- */
+.co-final-quote {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #33301e;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid rgba(51, 48, 30, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
+  margin-top: 0.75rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Info Card ---------- */
+.co-info-card {
+  background: rgba(51, 48, 30, 0.05);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(51, 48, 30, 0.06);
+}
+
+.co-info-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(51, 48, 30, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.co-info-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #33301e;
+  line-height: 1.45;
+}
+
+.co-info-small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(51, 48, 30, 0.55);
+  margin-top: 0.35rem;
+  line-height: 1.55;
+}
+
+
+/* ---------- Tags ---------- */
+.co-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.co-tag-teal {
+  background: rgba(15, 110, 86, 0.1);
+  color: #0f6e56;
+  border: 1px solid rgba(15, 110, 86, 0.15);
+}
+
+.co-tag-green {
+  background: rgba(59, 109, 17, 0.1);
+  color: #3b6d11;
+  border: 1px solid rgba(59, 109, 17, 0.15);
+}
+
+.co-tag-purple {
+  background: rgba(60, 52, 137, 0.1);
+  color: #3c3489;
+  border: 1px solid rgba(60, 52, 137, 0.15);
+}
+
+
+/* ---------- Slide Header ---------- */
+.co-slide-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.co-slide-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #33301e;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.co-slide-subtitle {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(51, 48, 30, 0.6);
+  margin-bottom: 1rem;
+}
+
+.co-divider {
+  height: 1px;
+  background: rgba(51, 48, 30, 0.1);
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .co-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .co-arrow-flow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .co-flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .co-slide-title {
+    font-size: 1.4rem;
+  }
+}

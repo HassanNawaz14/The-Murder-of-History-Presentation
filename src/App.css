@@ -1,0 +1,633 @@
+/* =========================================
+   APP STYLES — Murder of History Theme
+   6-Part Presentation Structure
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #f5f0e8;
+  color: #2c2118;
+}
+
+/* ---------- App Wrapper ---------- */
+.app-wrapper {
+  width: 100%;
+}
+
+/* ---------- Presentation Area ---------- */
+.presentation-area {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #f5f0e8;
+}
+
+.presentation-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.2rem 3rem;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(245, 240, 232, 0.95), transparent);
+}
+
+.presentation-header-dot {
+  width: 8px;
+  height: 8px;
+  background: #c0392b;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.presentation-header-brand {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #2c2118;
+}
+
+.presentation-header-divider {
+  color: #b5a898;
+  font-size: 0.8rem;
+}
+
+.presentation-header-section {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #9a8b7a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.scroll-stack-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+
+/* ===========================================
+   BASE CARD STYLES
+   =========================================== */
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease;
+}
+
+/* Custom rich-content cards (e.g. The Damage section) */
+.card-custom {
+  justify-content: flex-start;
+  padding: 2.5rem 3.5rem;
+  overflow-y: auto;
+}
+
+/* Subtle texture overlay for all cards */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+
+/* ===========================================
+   SECTION HEADING CARDS
+   =========================================== */
+
+.card-heading {
+  align-items: center;
+  text-align: center;
+  padding: 4rem;
+}
+
+.card-heading-part-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-heading-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-heading-subtitle {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-heading-presenter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-heading-presenter-icon {
+  font-size: 1rem;
+}
+
+.card-heading-presenter-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.card-heading-decoration {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-heading-line {
+  flex: 1;
+  height: 1px;
+  opacity: 0.3;
+}
+
+.card-heading-ornament {
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+
+/* ===========================================
+   CONTENT CARDS
+   =========================================== */
+
+.card-content h2 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.card-content p {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  opacity: 0.7;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+/* Card meta row: part label + slide number */
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-meta-part {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+}
+
+.card-meta-slide {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+}
+
+/* Decorative ornament line */
+.card-ornament {
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+  width: 80px;
+  height: 3px;
+  border-radius: 2px;
+  opacity: 0.3;
+}
+
+
+/* ===========================================
+   THEME 1: PARCHMENT  (The Introduction)
+   Warm cream / light beige
+   =========================================== */
+
+.theme-parchment {
+  background: linear-gradient(145deg, #f5f0e8 0%, #ebe4d6 50%, #dfd7c7 100%);
+  color: #2c2118;
+  border: 1px solid rgba(44, 33, 24, 0.08);
+  box-shadow:
+    0 4px 24px rgba(44, 33, 24, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.theme-parchment .card-heading-part-label {
+  background: rgba(192, 57, 43, 0.08);
+  color: #a61c1c;
+  border: 1px solid rgba(192, 57, 43, 0.12);
+}
+
+.theme-parchment .card-heading-line {
+  background: #2c2118;
+}
+
+.theme-parchment .card-heading-subtitle {
+  color: #5a4e42;
+}
+
+.theme-parchment .card-heading-presenter-name {
+  color: #7a6b5d;
+}
+
+.theme-parchment .card-meta-part {
+  background: rgba(192, 57, 43, 0.08);
+  color: #a61c1c;
+  border: 1px solid rgba(192, 57, 43, 0.12);
+}
+
+.theme-parchment .card-ornament {
+  background: linear-gradient(90deg, #c0392b, transparent);
+}
+
+
+/* ===========================================
+   THEME 2: MAROON  (The Myths)
+   Deep red / crimson dark
+   =========================================== */
+
+.theme-maroon {
+  background: linear-gradient(145deg, #5c1a1a 0%, #3d1111 50%, #2a0d0d 100%);
+  color: #f5e6d8;
+  border: 1px solid rgba(192, 57, 43, 0.2);
+  box-shadow:
+    0 4px 24px rgba(45, 10, 10, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.theme-maroon h2 { color: #f5e6d8; }
+.theme-maroon p  { color: rgba(245, 230, 216, 0.7); }
+
+.theme-maroon .card-heading-part-label {
+  background: rgba(245, 230, 216, 0.1);
+  color: #e8c8a9;
+  border: 1px solid rgba(245, 230, 216, 0.15);
+}
+
+.theme-maroon .card-heading-line {
+  background: #e8c8a9;
+}
+
+.theme-maroon .card-heading-subtitle {
+  color: rgba(245, 230, 216, 0.7);
+}
+
+.theme-maroon .card-heading-presenter-name {
+  color: rgba(245, 230, 216, 0.6);
+}
+
+.theme-maroon .card-meta-part {
+  background: rgba(245, 230, 216, 0.1);
+  color: #e8c8a9;
+  border: 1px solid rgba(245, 230, 216, 0.12);
+}
+
+.theme-maroon .card-meta-slide {
+  color: rgba(245, 230, 216, 0.4);
+}
+
+.theme-maroon .card-ornament {
+  background: linear-gradient(90deg, #e8c8a9, transparent);
+}
+
+
+/* ===========================================
+   THEME 3: SAGE  (The Truth)
+   Earthy green / olive tones
+   =========================================== */
+
+.theme-sage {
+  background: linear-gradient(145deg, #e8e4d4 0%, #d4cebb 50%, #c5bda8 100%);
+  color: #3a3527;
+  border: 1px solid rgba(58, 53, 39, 0.08);
+  box-shadow:
+    0 4px 24px rgba(58, 53, 39, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.theme-sage .card-heading-part-label {
+  background: rgba(85, 107, 72, 0.1);
+  color: #4a6340;
+  border: 1px solid rgba(85, 107, 72, 0.15);
+}
+
+.theme-sage .card-heading-line {
+  background: #3a3527;
+}
+
+.theme-sage .card-heading-subtitle {
+  color: #5a5445;
+}
+
+.theme-sage .card-heading-presenter-name {
+  color: #7a7464;
+}
+
+.theme-sage .card-meta-part {
+  background: rgba(85, 107, 72, 0.1);
+  color: #4a6340;
+  border: 1px solid rgba(85, 107, 72, 0.12);
+}
+
+.theme-sage .card-ornament {
+  background: linear-gradient(90deg, #4a6340, transparent);
+}
+
+
+/* ===========================================
+   THEME 4: SEPIA  (The Damage)
+   Dark warm brown / coffee tones
+   =========================================== */
+
+.theme-sepia {
+  background: linear-gradient(145deg, #3a3025 0%, #2c2118 50%, #1a1410 100%);
+  color: #e8ddd0;
+  border: 1px solid rgba(232, 221, 208, 0.08);
+  box-shadow:
+    0 4px 24px rgba(26, 20, 16, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.theme-sepia h2 { color: #e8ddd0; }
+.theme-sepia p  { color: rgba(232, 221, 208, 0.65); }
+
+.theme-sepia .card-heading-part-label {
+  background: rgba(232, 221, 208, 0.1);
+  color: #c0a882;
+  border: 1px solid rgba(232, 221, 208, 0.12);
+}
+
+.theme-sepia .card-heading-line {
+  background: #c0a882;
+}
+
+.theme-sepia .card-heading-subtitle {
+  color: rgba(232, 221, 208, 0.65);
+}
+
+.theme-sepia .card-heading-presenter-name {
+  color: rgba(232, 221, 208, 0.5);
+}
+
+.theme-sepia .card-meta-part {
+  background: rgba(232, 221, 208, 0.1);
+  color: #c0a882;
+  border: 1px solid rgba(232, 221, 208, 0.1);
+}
+
+.theme-sepia .card-meta-slide {
+  color: rgba(232, 221, 208, 0.35);
+}
+
+.theme-sepia .card-ornament {
+  background: linear-gradient(90deg, #c0a882, transparent);
+}
+
+
+/* ===========================================
+   THEME 5: INK  (The Problem)
+   Cool dark slate / charcoal with red accent
+   =========================================== */
+
+.theme-ink {
+  background: linear-gradient(145deg, #2c2f3a 0%, #1e2028 50%, #14151c 100%);
+  color: #dcd8d0;
+  border: 1px solid rgba(220, 216, 208, 0.06);
+  box-shadow:
+    0 4px 24px rgba(20, 21, 28, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.theme-ink h2 { color: #dcd8d0; }
+.theme-ink p  { color: rgba(220, 216, 208, 0.6); }
+
+.theme-ink .card-heading-part-label {
+  background: rgba(192, 57, 43, 0.12);
+  color: #e05a4a;
+  border: 1px solid rgba(192, 57, 43, 0.2);
+}
+
+.theme-ink .card-heading-line {
+  background: #dcd8d0;
+}
+
+.theme-ink .card-heading-subtitle {
+  color: rgba(220, 216, 208, 0.6);
+}
+
+.theme-ink .card-heading-presenter-name {
+  color: rgba(220, 216, 208, 0.45);
+}
+
+.theme-ink .card-meta-part {
+  background: rgba(192, 57, 43, 0.1);
+  color: #e05a4a;
+  border: 1px solid rgba(192, 57, 43, 0.15);
+}
+
+.theme-ink .card-meta-slide {
+  color: rgba(220, 216, 208, 0.35);
+}
+
+.theme-ink .card-ornament {
+  background: linear-gradient(90deg, #e05a4a, transparent);
+}
+
+
+/* ===========================================
+   THEME 6: OLIVE  (The Fix & Conclusion)
+   Warm olive / golden green with hope tones
+   =========================================== */
+
+.theme-olive {
+  background: linear-gradient(145deg, #f0ece0 0%, #e2dcc8 50%, #d0c8ac 100%);
+  color: #33301e;
+  border: 1px solid rgba(51, 48, 30, 0.08);
+  box-shadow:
+    0 4px 24px rgba(51, 48, 30, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.theme-olive .card-heading-part-label {
+  background: rgba(120, 100, 40, 0.1);
+  color: #6b6020;
+  border: 1px solid rgba(120, 100, 40, 0.15);
+}
+
+.theme-olive .card-heading-line {
+  background: #33301e;
+}
+
+.theme-olive .card-heading-subtitle {
+  color: #5a5540;
+}
+
+.theme-olive .card-heading-presenter-name {
+  color: #7a7560;
+}
+
+.theme-olive .card-meta-part {
+  background: rgba(120, 100, 40, 0.1);
+  color: #6b6020;
+  border: 1px solid rgba(120, 100, 40, 0.12);
+}
+
+.theme-olive .card-ornament {
+  background: linear-gradient(90deg, #6b6020, transparent);
+}
+
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+
+/* ===========================================
+   NAVIGATION BUTTONS
+   =========================================== */
+
+.nav-btn {
+  position: absolute;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(44, 33, 24, 0.7);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-btn:hover {
+  background: rgba(44, 33, 24, 0.9);
+  transform: scale(1.05);
+}
+
+.nav-prev-btn {
+  top: 2rem;
+}
+
+.nav-next-btn {
+  bottom: 2rem;
+}
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+
+@media (max-width: 768px) {
+  .card {
+    padding: 2rem 2rem;
+    border-radius: 18px;
+  }
+
+  .card-heading {
+    padding: 2.5rem 2rem;
+  }
+
+  .card-heading-title {
+    font-size: 2.4rem;
+  }
+
+  .card-heading-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .card-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+  }
+
+  .presentation-header {
+    padding: 1rem 1.5rem;
+  }
+}
