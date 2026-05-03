@@ -6,10 +6,13 @@ import { renderMythsSlide } from './components/MythsSlides/MythsSlides'
 import { renderTruthSlide } from './components/TruthSlides/TruthSlides'
 import { renderProblemSlide } from './components/ProblemSlides/ProblemSlides'
 import { renderConclusionSlide } from './components/ConclusionSlides/ConclusionSlides'
+import { renderIntroSlide } from './components/IntroSlides/IntroSlides'
+import EndScreen from './components/EndScreen/EndScreen'
 import './App.css'
 
 /* Renderer dispatch — maps sectionId to its render function */
 const RENDERERS = {
+  introduction: renderIntroSlide,
   damage: renderDamageSlide,
   myths: renderMythsSlide,
   truth: renderTruthSlide,
@@ -19,6 +22,7 @@ const RENDERERS = {
 
 /* CSS prefix per section (for slide-header, tag, divider classes) */
 const CSS_PREFIX = {
+  introduction: 'in',
   damage: 'dm',
   myths: 'my',
   truth: 'tr',
@@ -38,14 +42,13 @@ const SECTIONS = [
     partNumber: 1,
     title: 'The Introduction',
     subtitle: 'Who is K.K. Aziz? Why did he write this book?',
-    presenter: 'Presenter Name',
+    presenter: 'Mahad Mahmood | 24L-2548',
     theme: 'theme-parchment',
+    customRender: true,
     cards: [
-      { heading: 'About K.K. Aziz', body: 'Content coming soon…' },
-      { heading: 'Why This Book Matters', body: 'Content coming soon…' },
-      { heading: 'The Big Idea', body: 'Content coming soon…' },
-      { heading: 'Scope of the Study', body: 'Content coming soon…' },
-      { heading: 'Methodology & Sources', body: 'Content coming soon…' },
+      { render: 'intro-1' },
+      { render: 'intro-1-members' },
+      { render: 'intro-2' },
     ],
   },
   {
@@ -53,7 +56,7 @@ const SECTIONS = [
     partNumber: 2,
     title: 'The Myths',
     subtitle: 'Specific lies & mistakes found in our textbooks.',
-    presenter: 'Presenter Name',
+    presenter: 'Faizan Ul Haq | 24L-2598',
     theme: 'theme-maroon',
     customRender: true,
     cards: [
@@ -88,7 +91,7 @@ const SECTIONS = [
     partNumber: 3,
     title: 'The Truth',
     subtitle: 'How the author proves these myths wrong using real history.',
-    presenter: 'Presenter Name',
+    presenter: 'Ali Aamir | 24L-2558',
     theme: 'theme-sage',
     customRender: true,
     cards: [
@@ -123,7 +126,7 @@ const SECTIONS = [
     partNumber: 4,
     title: 'The Damage',
     subtitle: 'How these textbook lies affect students\u2019 minds and create narrow thinking.',
-    presenter: 'Presenter Name',
+    presenter: 'Hafiz M. Hassan | 24L-2610',
     theme: 'theme-sepia',
     customRender: true,
     cards: [
@@ -169,7 +172,7 @@ const SECTIONS = [
     partNumber: 5,
     title: 'The Problem',
     subtitle: 'Who is to blame? Government, authors, or the system?',
-    presenter: 'Presenter Name',
+    presenter: 'Aayan Ahmad | 24L-2612',
     theme: 'theme-ink',
     customRender: true,
     cards: [
@@ -204,7 +207,7 @@ const SECTIONS = [
     partNumber: 6,
     title: 'The Fix & Conclusion',
     subtitle: 'How can we fix the education system?',
-    presenter: 'Presenter Name',
+    presenter: 'M. Zohaib | 24L-2530',
     theme: 'theme-olive',
     customRender: true,
     cards: [
@@ -391,13 +394,15 @@ function App() {
                       const renderer = RENDERERS[card.sectionId];
                       return (
                         <>
-                          <div className={`${pfx}-slide-header`}>
-                            <h2 className={`${pfx}-slide-title`}>{card.heading}</h2>
-                            {card.subtitle && (
-                              <p className={`${pfx}-slide-subtitle`}>{card.subtitle}</p>
-                            )}
-                            <div className={`${pfx}-divider`} />
-                          </div>
+                          {card.heading && (
+                            <div className={`${pfx}-slide-header`}>
+                              <h2 className={`${pfx}-slide-title`}>{card.heading}</h2>
+                              {card.subtitle && (
+                                <p className={`${pfx}-slide-subtitle`}>{card.subtitle}</p>
+                              )}
+                              <div className={`${pfx}-divider`} />
+                            </div>
+                          )}
                           {card.tag && (
                             <span className={`${pfx}-tag ${pfx}-tag-${card.tag.color}`}>
                               {card.tag.text}
@@ -429,6 +434,9 @@ function App() {
           </ScrollStack>
         </div>
       </div>
+
+      {/* End Screen Footer */}
+      <EndScreen />
     </div>
   )
 }

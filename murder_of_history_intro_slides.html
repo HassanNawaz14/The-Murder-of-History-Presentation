@@ -1,0 +1,497 @@
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .deck {
+    width: 100%;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-dots {
+    display: flex;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 0.5px solid var(--color-border-secondary);
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .dot.active {
+    background: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+  }
+
+  .nav-btns {
+    display: flex;
+    gap: 8px;
+  }
+
+  .nav-btns button {
+    font-size: 13px;
+    padding: 5px 14px;
+    border: 0.5px solid var(--color-border-secondary);
+    border-radius: var(--border-radius-md);
+    background: transparent;
+    color: var(--color-text-primary);
+    cursor: pointer;
+  }
+
+  .nav-btns button:hover {
+    background: var(--color-background-secondary);
+  }
+
+  .slide {
+    display: none;
+    min-height: 460px;
+    padding: 0 1.25rem 2rem;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* SLIDE 1 */
+  .s1-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .s1-book-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.4rem;
+  }
+
+  .s1-book-sub {
+    font-size: 13px;
+    color: var(--color-text-tertiary);
+    margin-bottom: 0.25rem;
+  }
+
+  .s1-author {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+
+  .s1-year {
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    margin-top: 2px;
+  }
+
+  .s1-avatar {
+    width: 88px;
+    height: 108px;
+    border-radius: var(--border-radius-lg);
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .s1-avatar-icon {
+    font-size: 36px;
+  }
+
+  .s1-avatar-label {
+    font-size: 10px;
+    color: var(--color-text-tertiary);
+    text-align: center;
+  }
+
+  .s1-divider {
+    height: 0.5px;
+    background: var(--color-border-tertiary);
+    margin-bottom: 1.25rem;
+  }
+
+  .s1-bottom {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+  }
+
+  .s1-bottom-label {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+
+  .member-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .member-row {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .member-num {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-weight: 500;
+    padding-top: 1px;
+  }
+
+  .member-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .member-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+
+  .member-id {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+  }
+
+  .member-part {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: 1px;
+    line-height: 1.4;
+  }
+
+  .tag-inline {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 500;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .tag-you {
+    background: #E6F1FB;
+    color: #185FA5;
+  }
+
+  /* SLIDE 2 */
+  .s2-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: stretch;
+    min-height: 340px;
+  }
+
+  .s2-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .s2-slide-num {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .s2-title {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+  }
+
+  .s2-sub {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .s2-divider {
+    height: 0.5px;
+    background: var(--color-border-tertiary);
+    margin-bottom: 1rem;
+  }
+
+  .intro-point {
+    border: 0.5px solid var(--color-border-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 1rem 1.1rem;
+  }
+
+  .intro-point-label {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 6px;
+  }
+
+  .intro-point-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+  }
+
+  .intro-point-text {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+  }
+
+  .s2-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    border-left: 0.5px solid var(--color-border-tertiary);
+    padding-left: 2rem;
+  }
+
+  .gpt-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: #10A37F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .gpt-logo svg {
+    width: 38px;
+    height: 38px;
+    fill: white;
+  }
+
+  .gpt-name {
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  .gpt-word {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .gpt-desc {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    text-align: center;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .counter {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+</style>
+
+<div class="deck">
+  <div class="nav">
+    <div class="nav-dots">
+      <div class="dot active" onclick="goTo(0)"></div>
+      <div class="dot" onclick="goTo(1)"></div>
+    </div>
+    <div class="nav-btns">
+      <button onclick="prev()">← Prev</button>
+      <button onclick="next()">Next →</button>
+    </div>
+  </div>
+
+  <!-- SLIDE 1: Title & Group -->
+  <div class="slide active">
+    <div class="s1-top">
+      <div>
+        <div class="s1-book-sub">Book Presentation</div>
+        <div class="s1-book-title">The Murder<br>of History</div>
+        <div class="s1-author">K.K. Aziz</div>
+        <div class="s1-year">Khursheed Kamal Aziz &nbsp;·&nbsp; 1993</div>
+      </div>
+      <div class="s1-avatar">
+        <div class="s1-avatar-icon">👤</div>
+        <div class="s1-avatar-label">K.K. Aziz<br>1927–2009</div>
+      </div>
+    </div>
+    <div class="s1-divider"></div>
+    <div class="s1-bottom">
+      <div style="min-width:0">
+        <div class="s1-bottom-label">Group Members</div>
+        <div class="member-list">
+          <div class="member-row">
+            <div class="member-num">01</div>
+            <div class="member-info">
+              <div class="member-name">Mahad Mahmood <span
+                  style="font-size:11px;color:var(--color-text-tertiary)">24L-2548</span></div>
+              <div class="member-part">The Introduction: Who is K.K. Aziz? Why did he write this book?</div>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-num">02</div>
+            <div class="member-info">
+              <div class="member-name">Faizan Ul Haq <span
+                  style="font-size:11px;color:var(--color-text-tertiary)">24L-2598</span></div>
+              <div class="member-part">The Myths: Specific lies & mistakes in our textbooks</div>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-num">03</div>
+            <div class="member-info">
+              <div class="member-name">Ali Aamir <span
+                  style="font-size:11px;color:var(--color-text-tertiary)">24L-2558</span></div>
+              <div class="member-part">The Truth: How the author proves these myths wrong</div>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-num">04</div>
+            <div class="member-info">
+              <div class="member-name">Hafiz M. Hassan <span
+                  style="font-size:11px;color:var(--color-text-tertiary)">24L-2610</span></div>
+              <div class="member-part">The Damage: How textbook lies affect students' minds</div>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-num">05</div>
+            <div class="member-info">
+              <div class="member-name">Aayan Ahmad <span
+                  style="font-size:11px;color:var(--color-text-tertiary)">24L-2612</span></div>
+              <div class="member-part">The Problem: Who is to blame? (Govt / Authors)</div>
+            </div>
+          </div>
+          <div class="member-row">
+            <div class="member-num">06</div>
+            <div class="member-info">
+              <div class="member-name">M. Zohaib <span
+                  style="font-size:11px;color:var(--color-text-tertiary)">24L-2530</span></div>
+              <div class="member-part">The Fix & Conclusion: How to fix the education system?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Book Intro + ChatGPT -->
+  <div class="slide">
+    <div class="s2-grid">
+      <div class="s2-left">
+        <div>
+          <p class="s2-slide-num">Point 01 — The Introduction</p>
+          <h1 class="s2-title">What This Book Is About</h1>
+          <p class="s2-sub">Two core ideas that run through every chapter</p>
+          <div class="s2-divider"></div>
+        </div>
+        <div class="intro-point">
+          <div class="intro-point-label">Core Argument 01</div>
+          <div class="intro-point-title">History has been systematically murdered</div>
+          <div class="intro-point-text">Aziz analyzed 66 Pakistani textbooks across grades 1 to 14 and found deliberate
+            distortion — wrong dates, fabricated narratives, erased communities, and glorified myths — embedded into
+            every level of the education system. This was not accidental. It was policy.</div>
+        </div>
+        <div class="intro-point">
+          <div class="intro-point-label">Core Argument 02</div>
+          <div class="intro-point-title">A nation cannot grow on a foundation of lies</div>
+          <div class="intro-point-text">The damage is not just historical — it is psychological, civic, and
+            generational. Students raised on distorted history develop distorted identities. They cannot question,
+            cannot self-reflect, and cannot hold power accountable. The textbook does not just teach the past — it
+            shapes the future.</div>
+        </div>
+      </div>
+      <div class="s2-right">
+        <div class="gpt-logo">
+          <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.525-3.499 10.079 10.079 0 0 0-10.42 4.958 9.964 9.964 0 0 0-6.664 4.834 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.525 3.499 10.079 10.079 0 0 0 10.42-4.958 9.966 9.966 0 0 0 6.664-4.834 10.079 10.079 0 0 0-1.24-11.817zm-17.088 23.77a7.471 7.471 0 0 1-4.802-1.727c.061-.033.168-.091.237-.134l7.964-4.6a1.294 1.294 0 0 0 .655-1.134V19.054l3.366 1.944a.12.12 0 0 1 .066.092v9.299a7.505 7.505 0 0 1-7.486 7.251zM4.392 31.006a7.471 7.471 0 0 1-.894-5.023c.06.036.162.099.237.141l7.964 4.6a1.297 1.297 0 0 0 1.308 0l9.724-5.614v3.888a.12.12 0 0 1-.048.103l-8.051 4.649a7.504 7.504 0 0 1-10.24-2.744zM3.297 13.62A7.469 7.469 0 0 1 7.2 10.333c0 .068-.004.19-.004.274v9.201a1.294 1.294 0 0 0 .654 1.132l9.723 5.614-3.366 1.944a.12.12 0 0 1-.114.012L5.047 23.56a7.504 7.504 0 0 1-1.75-9.94zm27.658 6.437l-9.724-5.615 3.367-1.943a.121.121 0 0 1 .114-.012l9.048 5.228a7.498 7.498 0 0 1-1.158 13.528v-9.476a1.293 1.293 0 0 0-.647-1.71zm3.35-5.043c-.059-.037-.162-.099-.236-.141l-7.965-4.6a1.298 1.298 0 0 0-1.308 0l-9.723 5.614v-3.888a.12.12 0 0 1 .048-.103l8.05-4.645a7.497 7.497 0 0 1 11.135 7.763zm-21.063 6.929l-3.367-1.944a.12.12 0 0 1-.065-.092v-9.299a7.497 7.497 0 0 1 12.293-5.756 6.94 6.94 0 0 0-.236.134l-7.965 4.6a1.294 1.294 0 0 0-.654 1.132l-.006 11.225zm1.829-3.943l4.33-2.501 4.332 2.499v4.997l-4.331 2.5-4.331-2.5V18z" />
+          </svg>
+        </div>
+        <div class="gpt-name">ChatGPT / Any LLM</div>
+        <div class="gpt-word">Emotion-less</div>
+        <div class="gpt-desc">Does not care about your national pride. It will contradict your textbook — with sources —
+          in seconds.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="counter" id="counter">1 / 2</p>
+</div>
+
+<script>
+  let cur = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const counter = document.getElementById('counter');
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = n;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+    counter.textContent = (cur + 1) + ' / ' + slides.length;
+  }
+  function next() { goTo((cur + 1) % slides.length); }
+  function prev() { goTo((cur - 1 + slides.length) % slides.length); }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+</script>

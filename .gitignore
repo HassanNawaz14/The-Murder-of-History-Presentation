@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+Pst_Pres.txt
+Pst_Script.txt
