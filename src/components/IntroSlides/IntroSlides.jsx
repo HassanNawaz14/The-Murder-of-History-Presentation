@@ -64,7 +64,7 @@ export const renderIntroSlide = (renderId) => {
                     <span className="member-num">04</span>
                     <span className="member-id">24L-2610</span>
                   </div>
-                  <h3 className="member-name">Hafiz M. Hassan <span className="in-tag-inline in-tag-you" style={{marginLeft: '8px', verticalAlign: 'middle'}}>You</span></h3>
+                  <h3 className="member-name">Hafiz M. Hassan</h3>
                   <div className="member-divider"></div>
                   <p className="member-part">The Damage: How textbook lies affect students' minds</p>
                 </div>
