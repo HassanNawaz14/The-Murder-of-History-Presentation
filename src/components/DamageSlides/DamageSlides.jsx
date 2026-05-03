@@ -28,8 +28,8 @@ export const renderDamageSlide = (renderId) => {
             <div className="dm-highlight-box">
               <div className="dm-hl-label">Case study — 1953</div>
               <div className="dm-hl-text">
-                PM Khawaja Nazimuddin removed by Governor General Ghulam Mohammad
-                — no vote, no parliament. One man&apos;s decision. Not in your textbook.
+                The new generation learns not to vote for a political leader for their nation,
+                They just wait for a messiah to come and fix everything.
               </div>
             </div>
             <div className="dm-highlight-box">
@@ -51,50 +51,6 @@ export const renderDamageSlide = (renderId) => {
         </>
       );
 
-    /* ────────────────────────────────────────────
-       SLIDE 2 — Allergy to Complexity
-       ──────────────────────────────────────────── */
-    case 'allergy-complexity':
-      return (
-        <>
-          <div className="dm-stat-row">
-            <div className="dm-stat">
-              <div className="dm-stat-num">1M+</div>
-              <div className="dm-stat-label">lives lost in Partition</div>
-            </div>
-            <div className="dm-stat">
-              <div className="dm-stat-num">0</div>
-              <div className="dm-stat-label">pages on that in textbooks</div>
-            </div>
-            <div className="dm-stat">
-              <div className="dm-stat-num">1</div>
-              <div className="dm-stat-label">word used: &ldquo;glorious&rdquo;</div>
-            </div>
-          </div>
-
-          <div className="dm-big-quote">
-            &ldquo;You&apos;re either with us or against us&rdquo; — not a political
-            slogan. It&apos;s a textbook education speaking.
-          </div>
-
-          <div className="dm-grid-2">
-            <div className="dm-info-card">
-              <div className="dm-info-label">What the textbook says</div>
-              <div className="dm-info-value">Partition: clean, heroic, inevitable.</div>
-              <div className="dm-info-small">
-                Complex negotiations, divided communities, painful migrations — erased.
-              </div>
-            </div>
-            <div className="dm-info-card">
-              <div className="dm-info-label">The real damage</div>
-              <div className="dm-info-value">Compromise feels like betrayal.</div>
-              <div className="dm-info-small">
-                A generation mentally unable to sit with ambiguity — in politics, in life, in discourse.
-              </div>
-            </div>
-          </div>
-        </>
-      );
 
     /* ────────────────────────────────────────────
        SLIDE 3 — Manufactured Victimhood
@@ -112,13 +68,11 @@ export const renderDamageSlide = (renderId) => {
 
           <div className="dm-grid-2">
             <div className="dm-info-card">
-              <div className="dm-info-label">Case study — Tashkent 1966</div>
-              <div className="dm-info-value">The surrender nobody talks about</div>
+              <div className="dm-info-label">The Petty Slogans</div>
+              <div className="dm-info-value">The "HUM MAJBOOR HAIN" Syndrome</div>
               <div className="dm-info-small">
-                After the 1965 war stalemate, Ayub Khan quietly returned all
-                conquered positions at Tashkent. When it leaked, his own party
-                fractured. Textbook version: &ldquo;glorious defense.&rdquo;
-                Victim narrative: intact.
+                Out Books are always opting Pkaistan as the Victim, as the wronged nation, as the oppressed one.
+                They state that w are always surrounded by enemies
               </div>
             </div>
             <div className="dm-info-card">
@@ -159,12 +113,11 @@ export const renderDamageSlide = (renderId) => {
 
           <div className="dm-grid-2">
             <div className="dm-info-card">
-              <div className="dm-info-label">For CS / SE / DS students</div>
-              <div className="dm-info-value">The AI problem</div>
+              <div className="dm-info-label">Cas Study 1965</div>
+              <div className="dm-info-value">The "Morally Won Battle"</div>
               <div className="dm-info-small">
-                One prompt in any LLM contradicts your textbook — with sources,
-                in seconds. Borrowed confidence doesn&apos;t erode slowly.
-                It crashes in real time.
+                We stated that this war was a big win, while in reality, it was just a "stalemate".
+                This in turn became an example of the collapse of fake pride!
               </div>
             </div>
             <div className="dm-info-card">

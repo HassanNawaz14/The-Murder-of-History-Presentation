@@ -137,13 +137,7 @@ const SECTIONS = [
         tag: { text: 'Catastrophic for Governance', color: 'danger' },
         render: 'hero-addiction',
       },
-      {
-        /* Slide 2: Allergy to Complexity */
-        heading: 'Allergy to Complexity',
-        subtitle: 'When your textbook erases grey areas, your mind does too',
-        tag: { text: 'Intolerance for Nuance', color: 'amber' },
-        render: 'allergy-complexity',
-      },
+
       {
         /* Slide 3: Manufactured Victimhood */
         heading: 'Manufactured Victimhood',
